@@ -1,0 +1,8 @@
+@mixin clear-fix {
+  //this fixes the no height cases while using float grids and apply on the parent element
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
