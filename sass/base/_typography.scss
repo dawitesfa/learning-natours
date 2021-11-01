@@ -27,3 +27,32 @@ body {
     }
   }
 }
+
+.heading-secondary {
+  background-image: linear-gradient(
+    to right,
+    $color-primary-light,
+    $color-primary-dark
+  );
+  -moz-background-clip: text;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+  font-size: 3.5rem;
+  transition: all 0.3s ease-out;
+  &:hover {
+    text-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+    transform: skewX(15deg) skewY(2deg);
+  }
+}
+
+.heading-teritiary {
+  font-size: 1.8rem;
+  margin-bottom: $margin-bottom-small;
+}
+
+.paragraph {
+  font-size: 1.5rem;
+  margin-bottom: 3rem;
+}

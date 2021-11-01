@@ -1,0 +1,34 @@
+.composition {
+  position: relative;
+
+  &__img {
+    border-radius: $radius-border-card-default;
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+    outline-offset: 2rem;
+    position: absolute;
+    transition: all 0.3s;
+    width: 55%;
+    &:hover {
+      outline: 1.5rem solid $color-primary;
+      transform: translateY(-5px) scale(1.05);
+      z-index: 5;
+    }
+    &--1 {
+      top: -1rem;
+      left: 0;
+    }
+    &--2 {
+      top: 3rem;
+      right: 0;
+    }
+    &--3 {
+      top: 7rem;
+      left: 22.5%; //put the img at center
+    }
+  }
+  &:hover {
+    & > *:not(:hover) {
+      transform: scale(0.95);
+    }
+  }
+}

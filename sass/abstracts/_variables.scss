@@ -6,9 +6,20 @@ $color-primary-dark: #00ad7c;
 $color-text-default: #777;
 $color-text-light: #eee;
 
+$color-gray-light-2: #efefef;
+$color-gray-light-1: #f7f7f7;
+$color-gray-light-0: #fafafa;
+
 $color-black: #000;
 $color-white: #fff;
 
 //DIMS
 $gutter-horizontal: 5.26%; //(6rem / 114rem) * 100%
 $gutter-vertical: 8rem;
+
+$margin-bottom-small: 2rem;
+$margin-bottom-medium: 4rem;
+$margin-bottom-large: 6rem;
+$margin-bottom-huge: 8rem;
+
+$radius-border-card-default: 3px;
