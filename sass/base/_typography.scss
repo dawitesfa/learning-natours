@@ -2,4 +2,28 @@ body {
   color: $color-text-default;
   font-family: "Roboto", sans-serif;
   font-size: 1.6rem;
+  font-weight: 400;
+}
+
+.heading-primary {
+  color: $color-text-light;
+  margin-bottom: 4rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  width: 100%;
+
+  &__title {
+    display: block;
+    &--main {
+      font-size: 6rem;
+      letter-spacing: 3rem;
+      animation: move-left 1s ease-out;
+    }
+    &--sub {
+      font-size: 1.6rem;
+      font-weight: 400;
+      letter-spacing: 1.7rem;
+      animation: move-right 1s ease-out;
+    }
+  }
 }
