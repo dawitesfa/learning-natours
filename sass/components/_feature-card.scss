@@ -1,0 +1,27 @@
+.feature-card {
+  background-color: rgba($color-white, 0.7);
+  border-radius: $radius-border-card-default;
+  box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+  padding: 4rem 2rem;
+  text-align: center;
+  transition: all 0.4s ease-out;
+
+  &__icon {
+    background-image: linear-gradient(
+      to right,
+      $color-primary-light,
+      $color-primary-dark
+    );
+    -moz-background-clip: text;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+    font-size: 6rem;
+    margin-bottom: $margin-bottom-small;
+  }
+
+  &:hover {
+    transform: translateY(-1.5rem) scale(1.1);
+  }
+}
