@@ -101,6 +101,83 @@ body {
 .u-margin-bottom-small {
   margin-bottom: 2rem; }
 
+.book {
+  background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 50%, transparent 50%), url(../img/nat-10.jpg);
+  background-size: cover;
+  border-radius: 3px;
+  padding: 4rem; }
+
+.form__input-box {
+  width: 40%; }
+
+.form__input-label {
+  display: inline-block;
+  margin-left: 1rem;
+  position: relative;
+  opacity: 0;
+  text-align: left;
+  top: -3rem;
+  font-size: 1.4rem;
+  transition: all 0.2s; }
+
+.form__input {
+  width: 100%;
+  padding: 1.5rem 1rem;
+  border: none;
+  border-radius: 2px;
+  font-family: inherit;
+  outline: none;
+  border-bottom: 3px solid transparent;
+  margin-bottom: 0.5rem; }
+  .form__input--name {
+    text-transform: capitalize; }
+  .form__input::placeholder {
+    color: #9c9c9c;
+    font-family: "Roboto", sans-serif;
+    font-size: 1.4rem; }
+  .form__input:focus {
+    border-bottom: 3px solid #ff7730; }
+  .form__input:valid {
+    border-bottom: 3px solid #52d681; }
+  .form__input:not(:placeholder-shown) + .form__input-label {
+    opacity: 1;
+    top: 0;
+    font-size: 1.6rem; }
+
+.form__radio-group {
+  display: inline-block;
+  width: 49%; }
+
+.form__radio-label {
+  font-size: 1.6rem; }
+
+.form__radio-btn {
+  position: relative;
+  display: inline-block;
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 50%;
+  border: 4px solid #52d681;
+  top: 0.6rem;
+  margin-right: 1rem; }
+  .form__radio-btn::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 1.1rem;
+    height: 1.1rem;
+    background-color: #52d681;
+    border-radius: 50%;
+    opacity: 0;
+    transition: all 0.2s; }
+
+.form__radio-input {
+  display: none; }
+  .form__radio-input:checked ~ .form__radio-label .form__radio-btn::after {
+    opacity: 1; }
+
 .btn, .btn:link, .btn:visited {
   position: relative;
   border-radius: 100px;
@@ -499,3 +576,7 @@ body {
   position: relative;
   background-color: rgba(239, 239, 239, 0.85);
   padding: 10rem 0; }
+
+.section-book {
+  background-image: linear-gradient(to right bottom, #b5ff7d, #00ad7c);
+  padding: 15rem 0; }
