@@ -303,7 +303,8 @@ body {
   width: 100%;
   opacity: 0;
   visibility: hidden;
-  transition: all 0.3s; }
+  transition: all 0.3s;
+  z-index: 100; }
   .popup__content {
     position: absolute;
     left: 50%;
@@ -362,6 +363,70 @@ body {
     -moz-column-rule: 2px solid #efefef;
     -webkit-column-rule: 2px solid #efefef;
     column-rule: 2px solid #efefef; }
+
+.story-box {
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.2);
+  line-height: 1.7;
+  margin: 0 auto;
+  padding: 4rem 4rem 4rem 6rem;
+  width: 55%;
+  transform: skewX(-7deg);
+  backface-visibility: hidden; }
+  .story-box > * {
+    transform: skewX(7deg); }
+  .story-box:not(:last-child) {
+    margin-bottom: 8rem; }
+  .story-box::after {
+    content: "";
+    display: table;
+    clear: both; }
+  .story-box__pic-box {
+    position: relative;
+    border-radius: 50%;
+    height: 15rem;
+    width: 15rem;
+    overflow: hidden;
+    shape-outside: circle(50% at 50%);
+    clip-path: circle(50% at 50%);
+    float: left;
+    right: 2rem; }
+  .story-box__pic {
+    height: 100%;
+    transform: translateX(-3rem) scale(1.5);
+    transition: filter 0.5s, transform 0.3s; }
+  .story-box__name {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 300;
+    text-align: center;
+    transform: translate(-50%, 0);
+    color: #fff;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: all 0.3s; }
+  .story-box:hover .story-box__pic {
+    filter: blur(0.3rem);
+    transform: translateX(-3rem) scale(1); }
+  .story-box:hover .story-box__name {
+    opacity: 1;
+    transform: translate(-50%, -50%); }
+
+.video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -5;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; }
+  .video-bg__video {
+    object-fit: cover;
+    width: 100%;
+    height: 100%; }
 
 .row {
   margin: 0 auto;
@@ -429,3 +494,8 @@ body {
   background-color: #efefef;
   margin-top: -8rem;
   padding: 20rem 0 10rem 0; }
+
+.section-story {
+  position: relative;
+  background-color: rgba(239, 239, 239, 0.85);
+  padding: 10rem 0; }
