@@ -166,4 +166,47 @@
   &:hover &__side--back {
     transform: rotateY(0deg);
   }
+
+  @include respond(tab-land) {
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+    &__side {
+      box-shadow: none;
+      &--front {
+        padding-bottom: 1rem;
+      }
+      &--back {
+        position: relative;
+        transform: rotateY(0deg);
+        height: auto;
+        margin-top: -4rem;
+        clip-path: polygon(0 4rem, 100% 0, 100% 100%, 0 100%);
+      }
+    }
+    &:hover &__side {
+      transform: rotateY(0deg);
+    }
+
+    &:hover &__side--back {
+      transform: rotateY(0deg);
+    }
+    &__cta {
+      padding: 6rem 0 4rem 0;
+      position: relative;
+      top: 0;
+      left: 0;
+      transform: none;
+      text-align: center;
+      // display: inline-block;
+    }
+
+    &__price-box {
+      margin-bottom: 2rem;
+    }
+    &__price-only {
+      font-size: 1.6rem;
+    }
+    &__price-amount {
+      font-size: 3rem;
+    }
+  }
 }

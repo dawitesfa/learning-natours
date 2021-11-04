@@ -1,9 +1,19 @@
 .footer {
   padding: 10rem 0;
   background-color: $color-grey-dark-3;
+  @include respond(tab-port) {
+    padding: 5rem 0;
+    // text-align: center;
+  }
 
   &__logo {
     height: 12rem;
+  }
+
+  &__navigation {
+    @include respond(tab-port) {
+      text-align: center;
+    }
   }
 
   &__menu-list {
@@ -25,7 +35,9 @@
     border-top: 2px solid $color-gray-dark-0;
     font-size: 1.4rem;
     padding-top: 1rem;
-    width: 85%;
+    @include respond(tab-port) {
+      text-align: center;
+    }
   }
 
   &__link {

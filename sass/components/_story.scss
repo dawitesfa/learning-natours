@@ -9,6 +9,14 @@
   transform: skewX(-7deg);
   & > * {
     transform: skewX(7deg);
+    @include respond(phone) {
+      transform: skewX(0);
+    }
+  }
+  @include respond(phone) {
+    padding: 4rem;
+    transform: skewX(0);
+    width: 90%;
   }
   backface-visibility: hidden;
   &:not(:last-child) {

@@ -16,14 +16,33 @@
     &--1 {
       top: -1rem;
       left: 0;
+      @include respond(tab-port) {
+        top: 0;
+      }
     }
     &--2 {
       top: 3rem;
       right: 0;
+      @include respond(tab-port) {
+        top: 0;
+        transform: scale(1.2) translateY(-2px);
+        z-index: 2;
+      }
     }
     &--3 {
       top: 7rem;
       left: 22.5%; //put the img at center
+      @include respond(tab-port) {
+        top: 0;
+        left: 0;
+        transform: scale(0.95) translateY(3px);
+      }
+    }
+
+    @include respond(tab-port) {
+      position: relative;
+      width: 33.33%;
+      float: left !important;
     }
   }
   &:hover {

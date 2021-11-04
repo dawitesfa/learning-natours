@@ -8,10 +8,31 @@
   background-size: cover;
   border-radius: $radius-border-card-default;
   padding: 4rem;
+  @include respond(tab-land) {
+    background-image: linear-gradient(
+        105deg,
+        rgba($color-white, 0.9) 65%,
+        transparent 50%
+      ),
+      url(../img/nat-10.jpg);
+  }
+  @include respond(tab-port) {
+    background-image: linear-gradient(
+        rgba($color-white, 0.9),
+        rgba($color-white, 0.9)
+      ),
+      url(../img/nat-10.jpg);
+  }
 }
 .form {
   &__input-box {
     width: 40%;
+    @include respond(tab-land) {
+      width: 60%;
+    }
+    @include respond(tab-port) {
+      width: 100%;
+    }
   }
 
   &__input-label {
@@ -23,6 +44,10 @@
     top: -3rem;
     font-size: 1.4rem;
     transition: all 0.2s;
+    &--invalid-email {
+      color: orangered;
+      opacity: 0;
+    }
   }
 
   &__input {
@@ -51,6 +76,15 @@
       border-bottom: 3px solid $color-primary;
     }
 
+    &:not(:placeholder-shown):invalid {
+      border-bottom: 3px solid $color-secondary-dark;
+    }
+    &:not(:placeholder-shown):invalid
+      + .form__input-label
+      .form__input-label--invalid-email {
+      opacity: 1;
+    }
+
     &:not(:placeholder-shown) + .form__input-label {
       opacity: 1;
       top: 0;
@@ -61,6 +95,9 @@
   &__radio-group {
     display: inline-block;
     width: 49%;
+    @include respond(phone) {
+      width: 100%;
+    }
   }
 
   &__radio-label {

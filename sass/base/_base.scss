@@ -9,10 +9,25 @@
 html {
   box-sizing: border-box;
   font-size: 62.5%; //this coresponds to 1rem = 10px
+  @include respond(tab-land) {
+    //make 1rem = 9px
+    font-size: 56.25%;
+  }
+  @include respond(tab-port) {
+    //make 1rem = 8px
+    font-size: 50%;
+  }
+  @include respond(desktop-big) {
+    //make 1rem = 12px
+    font-size: 75%;
+  }
 }
 
 body {
   padding: 3rem;
   line-height: 1.3;
   position: relative;
+  @include respond(tab-port) {
+    padding: 0;
+  }
 }

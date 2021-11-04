@@ -4,10 +4,20 @@
 
 .u-margin-bottom-large {
   margin-bottom: $margin-bottom-large;
+  @include respond(tab-port) {
+    margin-bottom: $margin-bottom-medium;
+  }
+
+  @include respond(phone) {
+    margin-bottom: $margin-bottom-small;
+  }
 }
 
 .u-margin-bottom-medium {
   margin-bottom: $margin-bottom-medium;
+  @include respond(tab-port) {
+    margin-bottom: $margin-bottom-small;
+  }
 }
 
 .u-margin-bottom-small {

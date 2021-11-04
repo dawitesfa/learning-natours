@@ -5,11 +5,24 @@
   &:not(:last-child) {
     margin-bottom: $gutter-vertical; //this allows to add margin except the last one
   }
+  @include respond(tab-port) {
+    max-width: 50rem;
+  }
+  @include respond(phone) {
+    padding: 0 2rem;
+  }
   [class^="col-"] {
     //this stands/applies for class with prefix 'col-'
     float: left;
     &:not(:last-child) {
       margin-right: $gutter-horizontal;
+      @include respond(tab-port) {
+        margin-right: 0;
+        margin-bottom: $margin-bottom-medium;
+      }
+    }
+    @include respond(tab-port) {
+      width: 100% !important;
     }
   }
   .col-1-of-2 {

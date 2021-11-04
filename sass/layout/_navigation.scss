@@ -12,6 +12,16 @@
     );
     z-index: 2000;
     transition: all 0.5s 0.2s;
+    @include respond(tab-port) {
+      transform: scale(0.9);
+      top: 3.5rem;
+      right: 3.5rem;
+    }
+    @include respond(phone) {
+      transform: scale(0.8);
+      top: 3rem;
+      right: 3rem;
+    }
   }
 
   &__btn {
@@ -25,11 +35,21 @@
     background-color: $color-white;
     box-shadow: 0 1rem 3rem rgba($color-black, 0.2);
     z-index: 3500;
+    @include respond(tab-port) {
+      transform: scale(0.9);
+      top: 3rem;
+      right: 3rem;
+    }
+    @include respond(phone) {
+      transform: scale(0.8);
+      top: 2.5rem;
+      right: 2.5rem;
+    }
   }
 
   &__btn-icon {
     position: relative;
-    left: 2rem;
+    left: 2.2rem;
     top: 2rem;
     height: 2px;
     width: 2.5rem;

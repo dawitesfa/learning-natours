@@ -14,3 +14,33 @@
   top: 50%;
   transform: translate(-50%, -50%);
 }
+
+//Responsive mixin
+//all common breakponts in ordered fassion
+// tab-land:1200px->1200/16=75em(max-width)
+// tab-port:900px->900/16=56.25em(max-width)
+// phone:600px->600/16=37.5em(max-width)
+// desktop-big:1800px->1800/16=112.5em(min-width)
+
+@mixin respond($break-point) {
+  @if ($break-point == tab-land) {
+    @media (max-width: 75em) {
+      @content;
+    }
+  }
+  @if ($break-point == tab-port) {
+    @media (max-width: 56.25em) {
+      @content;
+    }
+  }
+  @if ($break-point == phone) {
+    @media (max-width: 37.5em) {
+      @content;
+    }
+  }
+  @if ($break-point == desktop-big) {
+    @media (min-width: 112.5em) {
+      @content;
+    }
+  }
+}
