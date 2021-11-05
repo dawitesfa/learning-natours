@@ -143,12 +143,27 @@ body {
   background-size: cover;
   border-radius: 3px;
   padding: 4rem; }
+  @media (max-width: 112.5em) {
+    .book {
+      background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 50%, transparent 50%), url(../img/nat-10-small.jpg); } }
+  @media (min-resolution: 192dpi) and (max-width: 112.5em) {
+    .book {
+      background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 50%, transparent 50%), url(../img/nat-10.jpg); } }
   @media (max-width: 75em) {
     .book {
-      background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 65%, transparent 50%), url(../img/nat-10.jpg); } }
+      background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 65%, transparent 65%), url(../img/nat-10-small.jpg); } }
+  @media (min-resolution: 192dpi) and (max-width: 75em) {
+    .book {
+      background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 65%, transparent 65%), url(../img/nat-10.jpg); } }
   @media (max-width: 56.25em) {
     .book {
+      background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url(../img/nat-10-small.jpg); } }
+  @media (min-resolution: 192dpi) and (max-width: 56.25em) {
+    .book {
       background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url(../img/nat-10.jpg); } }
+  @media (max-width: 37.5em) {
+    .book {
+      background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url(../img/nat-10-small.jpg); } }
 
 .form__input-box {
   width: 40%; }
@@ -326,11 +341,11 @@ body {
     background-blend-mode: screen;
     background-size: cover; }
     .card__front-img-box--orange {
-      background-image: linear-gradient(to right bottom, #ffb900, #ff7730), url(../img/nat-5.jpg); }
+      background-image: linear-gradient(to right bottom, #ffb900, #ff7730), url(../img/nat-5-small-er.jpg); }
     .card__front-img-box--green {
-      background-image: linear-gradient(to right bottom, #b5ff7d, #00ad7c), url(../img/nat-6.jpg); }
+      background-image: linear-gradient(to right bottom, #b5ff7d, #00ad7c), url(../img/nat-6-small-er.jpg); }
     .card__front-img-box--blue {
-      background-image: linear-gradient(to right bottom, #2998ff, #5643fa), url(../img/nat-7.jpg); }
+      background-image: linear-gradient(to right bottom, #2998ff, #5643fa), url(../img/nat-7-small-er.jpg); }
   .card__title {
     color: #fff;
     font-size: 2.8rem;
@@ -573,11 +588,15 @@ body {
     @media (max-width: 37.5em) {
       .story-box > * {
         transform: skewX(0); } }
+  @media (max-width: 56.25em) {
+    .story-box {
+      width: 100%;
+      max-width: 50rem; } }
   @media (max-width: 37.5em) {
     .story-box {
       padding: 4rem;
       transform: skewX(0);
-      width: 90%; } }
+      width: 92%; } }
   .story-box:not(:last-child) {
     margin-bottom: 8rem; }
   .story-box::after {
@@ -720,6 +739,9 @@ body {
   @media (max-width: 37.5em) {
     .header {
       clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%); } }
+  @media (min-resolution: 192dpi) and (min-width: 37.5em), (min-width: 125em) {
+    .header {
+      background-image: linear-gradient(to right bottom, rgba(181, 255, 125, 0.8), rgba(0, 173, 124, 0.8)), url(../img/hero.jpg); } }
   .header__logo-box {
     position: absolute;
     top: 4rem;
@@ -869,7 +891,7 @@ body {
       margin-top: -11vh; } }
 
 .section-features {
-  background-image: linear-gradient(to right bottom, rgba(181, 255, 125, 0.8), rgba(0, 173, 124, 0.8)), url(../img/nat-4.jpg);
+  background-image: linear-gradient(to right bottom, rgba(181, 255, 125, 0.8), rgba(0, 173, 124, 0.8)), url(../img/nat-4-small.jpg);
   background-position: top;
   background-size: cover;
   margin-top: -8rem;
@@ -880,6 +902,9 @@ body {
   @media (max-width: 56.25em) {
     .section-features {
       padding: 10rem 0; } }
+  @media (min-resolution: 192dpi) and (min-width: 37.5em), (min-width: 125em) {
+    .section-features {
+      background-image: linear-gradient(to right bottom, rgba(181, 255, 125, 0.8), rgba(0, 173, 124, 0.8)), url(../img/nat-4.jpg); } }
 
 .section-tours {
   background-color: #efefef;

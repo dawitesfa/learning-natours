@@ -15,6 +15,17 @@
     clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
   }
 
+  @media (min-resolution: 192dpi) and (min-width: 37.5em), (min-width: 125em) {
+    //either the resolution >= 192dpi and width >= 600px  is true or width >= 2000px is true applies
+    //otherwise the small img will be used css responsive image
+    background-image: linear-gradient(
+        to right bottom,
+        rgba($color-primary-light, 0.8),
+        rgba($color-primary-dark, 0.8)
+      ),
+      url(../img/hero.jpg);
+  }
+
   &__logo-box {
     position: absolute;
     top: 4rem;

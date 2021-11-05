@@ -8,21 +8,69 @@
   background-size: cover;
   border-radius: $radius-border-card-default;
   padding: 4rem;
-  @include respond(tab-land) {
+  //case 1---
+  //NB: here I cannot figured out how to minimuze the file size by minimizing the resolution
+  @media (max-width: 112.5em) {
     background-image: linear-gradient(
         105deg,
-        rgba($color-white, 0.9) 65%,
+        rgba($color-white, 0.9) 50%,
+        transparent 50%
+      ),
+      url(../img/nat-10-small.jpg);
+  }
+  @media (min-resolution: 192dpi) and (max-width: 112.5em) {
+    background-image: linear-gradient(
+        105deg,
+        rgba($color-white, 0.9) 50%,
         transparent 50%
       ),
       url(../img/nat-10.jpg);
   }
+  // --- case1
+  //case 2 ---
+  @include respond(tab-land) {
+    background-image: linear-gradient(
+        105deg,
+        rgba($color-white, 0.9) 65%,
+        transparent 65%
+      ),
+      url(../img/nat-10-small.jpg);
+  }
+  @media (min-resolution: 192dpi) and (max-width: 75em) {
+    background-image: linear-gradient(
+        105deg,
+        rgba($color-white, 0.9) 65%,
+        transparent 65%
+      ),
+      url(../img/nat-10.jpg);
+  }
+  // --- case 2
+  //case 3 ---
   @include respond(tab-port) {
+    background-image: linear-gradient(
+        rgba($color-white, 0.9),
+        rgba($color-white, 0.9)
+      ),
+      url(../img/nat-10-small.jpg);
+  }
+  @media (min-resolution: 192dpi) and (max-width: 56.25em) {
     background-image: linear-gradient(
         rgba($color-white, 0.9),
         rgba($color-white, 0.9)
       ),
       url(../img/nat-10.jpg);
   }
+
+  //--- case 3
+  //case 4 ---
+  @include respond(phone) {
+    background-image: linear-gradient(
+        rgba($color-white, 0.9),
+        rgba($color-white, 0.9)
+      ),
+      url(../img/nat-10-small.jpg);
+  }
+  //--- case 4
 }
 .form {
   &__input-box {
