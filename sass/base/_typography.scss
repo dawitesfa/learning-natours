@@ -40,14 +40,18 @@ body {
     $color-primary-light,
     $color-primary-dark
   );
-  -moz-background-clip: text;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: $color-primary-dark;
   display: inline-block;
   font-size: 3.2rem;
   text-transform: uppercase;
   transition: all 0.3s ease-out;
+  @supports (-moz-background-clip: text) or (-webkit-background-clip: text) or
+    (background-clip: text) {
+    -moz-background-clip: text;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
   &:hover {
     text-shadow: 0 1rem 2rem rgba($color-black, 0.2);
     transform: skewX(15deg) skewY(2deg);

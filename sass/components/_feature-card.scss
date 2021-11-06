@@ -12,13 +12,17 @@
       $color-primary-light,
       $color-primary-dark
     );
-    -moz-background-clip: text;
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    color: $color-primary-dark;
     display: inline-block;
     font-size: 6rem;
     margin-bottom: $margin-bottom-small;
+    @supports (-ms-background-clip: text) or (-webkit-background-clip: text) or
+      (background-clip: text) {
+      -ms-background-clip: text;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
   }
 
   &:hover {

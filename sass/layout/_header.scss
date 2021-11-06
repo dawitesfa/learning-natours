@@ -1,7 +1,7 @@
 .header {
   position: relative;
   width: 100%;
-  height: 95vh;
+  height: 85vh;
   background-image: linear-gradient(
       to right bottom,
       rgba($color-primary-light, 0.8),
@@ -10,12 +10,20 @@
     url(../img/hero-small.jpg);
   background-position: top;
   background-size: cover;
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-  @include respond(phone) {
-    clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+
+  @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    height: 95vh;
+
+    @include respond(phone) {
+      clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+    }
   }
 
-  @media (min-resolution: 192dpi) and (min-width: 37.5em), (min-width: 125em) {
+  @media (min-resolution: 192dpi) and (min-width: 37.5em),
+    (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
+    (min-width: 125em) {
     //either the resolution >= 192dpi and width >= 600px  is true or width >= 2000px is true applies
     //otherwise the small img will be used css responsive image
     background-image: linear-gradient(

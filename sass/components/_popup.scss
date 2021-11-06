@@ -9,6 +9,12 @@
   visibility: hidden;
   transition: all 0.3s;
   z-index: 100;
+  @supports (-webkit-backdrop-filter: blur(10px)) or
+    (backdrop-filter: blur(10px)) {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color: rgba($color-black, 0.3);
+  }
 
   &__content {
     @include align-abs-center;
@@ -72,12 +78,11 @@
       -moz-column-count: 2;
       -webkit-column-count: 2;
       column-count: 2;
-      -moz-column-gap: 4rem;
-      -webkit-column-gap: 4rem;
       column-gap: 4rem;
       font-size: 1.4rem;
       -webkit-hyphens: auto;
       -moz-hyphens: auto;
+      -ms-hyphens: auto;
       hyphens: auto;
       line-height: 1.5;
       -moz-column-rule: 2px solid $color-gray-light-2;

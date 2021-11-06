@@ -86,14 +86,17 @@ body {
 
 .heading-secondary {
   background-image: linear-gradient(to right, #b5ff7d, #00ad7c);
-  -moz-background-clip: text;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: #00ad7c;
   display: inline-block;
   font-size: 3.2rem;
   text-transform: uppercase;
   transition: all 0.3s ease-out; }
+  @supports (-moz-background-clip: text) or (-webkit-background-clip: text) or (background-clip: text) {
+    .heading-secondary {
+      -moz-background-clip: text;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent; } }
   .heading-secondary:hover {
     text-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
     transform: skewX(15deg) skewY(2deg); }
@@ -316,11 +319,8 @@ body {
     border-radius: 3px;
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
     -webkit-backface-visibility: hidden;
-    -moz-backface-visibility: hidden;
     backface-visibility: hidden;
     overflow: hidden;
-    -ms-perspective: 150rem;
-    -moz-perspective: 150rem;
     -webkit-perspective: 150rem;
     perspective: 150rem;
     transition: all 1s ease-out; }
@@ -335,11 +335,15 @@ body {
       width: 100%;
       height: 100%; }
   .card__front-img-box {
-    height: 23rem;
+    height: 20rem;
     width: 100%;
-    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
     background-blend-mode: screen;
     background-size: cover; }
+    @supports (-webkit-clip-path: polygon(0 0)) or (clip-path: polygon(0 0)) {
+      .card__front-img-box {
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        height: 23rem; } }
     .card__front-img-box--orange {
       background-image: linear-gradient(to right bottom, #ffb900, #ff7730), url(../img/nat-5-small-er.jpg); }
     .card__front-img-box--green {
@@ -484,13 +488,16 @@ body {
   transition: all 0.4s ease-out; }
   .feature-card__icon {
     background-image: linear-gradient(to right, #b5ff7d, #00ad7c);
-    -moz-background-clip: text;
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    color: #00ad7c;
     display: inline-block;
     font-size: 6rem;
     margin-bottom: 2rem; }
+    @supports (-ms-background-clip: text) or (-webkit-background-clip: text) or (background-clip: text) {
+      .feature-card__icon {
+        -ms-background-clip: text;
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent; } }
   .feature-card:hover {
     transform: translateY(-1.5rem) scale(1.1); }
 
@@ -505,6 +512,11 @@ body {
   visibility: hidden;
   transition: all 0.3s;
   z-index: 100; }
+  @supports (-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)) {
+    .popup {
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      background-color: rgba(0, 0, 0, 0.3); } }
   .popup__content {
     position: absolute;
     left: 50%;
@@ -553,12 +565,11 @@ body {
     -moz-column-count: 2;
     -webkit-column-count: 2;
     column-count: 2;
-    -moz-column-gap: 4rem;
-    -webkit-column-gap: 4rem;
     column-gap: 4rem;
     font-size: 1.4rem;
     -webkit-hyphens: auto;
     -moz-hyphens: auto;
+    -ms-hyphens: auto;
     hyphens: auto;
     line-height: 1.5;
     -moz-column-rule: 2px solid #efefef;
@@ -609,10 +620,14 @@ body {
     height: 15rem;
     width: 15rem;
     overflow: hidden;
-    shape-outside: circle(50% at 50%);
-    clip-path: circle(50% at 50%);
     float: left;
     right: 2rem; }
+    @supports (clip-path: circle(50% at 50%)) or (-webkit-clip-path: circle(50% at 50%)) {
+      .story-box__pic-box {
+        border-radius: none;
+        overflow: none;
+        shape-outside: circle(50% at 50%);
+        clip-path: circle(50% at 50%); } }
   .story-box__pic {
     height: 100%;
     transform: translateX(-3rem) scale(1.5);
@@ -630,6 +645,7 @@ body {
     opacity: 0;
     transition: all 0.3s; }
   .story-box:hover .story-box__pic {
+    -webkit-filter: blur(0.3rem);
     filter: blur(0.3rem);
     transform: translateX(-3rem) scale(1); }
   .story-box:hover .story-box__name {
@@ -645,6 +661,7 @@ body {
   height: 100%;
   overflow: hidden; }
   .video-bg__video {
+    -o-object-fit: cover;
     object-fit: cover;
     width: 100%;
     height: 100%; }
@@ -731,15 +748,19 @@ body {
 .header {
   position: relative;
   width: 100%;
-  height: 95vh;
+  height: 85vh;
   background-image: linear-gradient(to right bottom, rgba(181, 255, 125, 0.8), rgba(0, 173, 124, 0.8)), url(../img/hero-small.jpg);
   background-position: top;
-  background-size: cover;
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); }
-  @media (max-width: 37.5em) {
+  background-size: cover; }
+  @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
     .header {
-      clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%); } }
-  @media (min-resolution: 192dpi) and (min-width: 37.5em), (min-width: 125em) {
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+      height: 95vh; }
+      @media (max-width: 37.5em) {
+        .header {
+          clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%); } } }
+  @media (min-resolution: 192dpi) and (min-width: 37.5em), (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em), (min-width: 125em) {
     .header {
       background-image: linear-gradient(to right bottom, rgba(181, 255, 125, 0.8), rgba(0, 173, 124, 0.8)), url(../img/hero.jpg); } }
   .header__logo-box {
